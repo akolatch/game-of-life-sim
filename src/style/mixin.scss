@@ -1,0 +1,59 @@
+@import './colors.scss';
+
+@mixin boarder-main($color: $gray-70, $radius: 5px) {
+  border: {
+    width: 2px;
+    style: solid;
+    color: $color;
+    radius: $radius;
+  }
+}
+
+@mixin side-label($text, $color: $gray-70, $horizontal-align: -10%) {
+  &::before {
+    content: $text;
+    font-size: 1rem;
+    color: $color;
+    vertical-align: middle;
+    right: $horizontal-align;
+    position: relative;
+    padding: 0.25em 0;
+    margin-left: 0;
+    padding-left: 0;
+    background-color: $white;
+  }
+}
+
+@mixin top-label($text, $vertical-align) {
+  &::before {
+    content: $text;
+    position: absolute;
+    top: $vertical-align;
+    font-size: 1rem;
+    padding: 0 0.5em;
+    background-color: $white;
+  }
+}
+@mixin text-input($text, $width, $color: $gray-70, $horizontal-align: -10%) {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  @include side-label($text, $color, $horizontal-align);
+  input {
+    @include boarder-main($color);
+    color: $gray-70;
+    width: $width;
+    font-size: 1.5em;
+    padding: 0.5em;
+    text-align: center;
+  }
+}
+// @mixin text-input($width, $boarder-color: $gray-70) {
+//   @include boarder-main($boarder-color);
+//   color: $gray-70;
+//   width: $width;
+//   font-size: 1.5em;
+//   padding: 0.5em;
+//   text-align: center;
+// }

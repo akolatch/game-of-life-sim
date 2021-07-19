@@ -1,0 +1,46 @@
+@import './style/colors.scss';
+@import './style/mixin.scss';
+
+body {
+  color: $gray-70;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 0.5fr repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+h1 {
+  grid-area: 1 / 1 / 2 / 6;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input[type='submit'] {
+  @include boarder-main(null, 2em);
+  color: inherit;
+  font-size: 1em;
+  background-color: $white;
+  padding: 0.5em 1em;
+  // margin: 2em;
+}
+
+button {
+  background-color: $white;
+  border: none;
+}
