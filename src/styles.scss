@@ -8,7 +8,7 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 0.5fr repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -37,10 +37,25 @@ input[type='submit'] {
   font-size: 1em;
   background-color: $white;
   padding: 0.5em 1em;
-  // margin: 2em;
 }
 
 button {
   background-color: $white;
   border: none;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+.main-container {
+  grid-area: 2 / 1 / 6 / 7;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  margin: 0 2em;
+  height: 80vh;
+  overflow: hidden;
+  @include boarder-main;
 }

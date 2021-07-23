@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import BoardSettings from './components/BoardSettings';
-import { TurnsForm } from './components/TurnsForm';
+import { DaysForm } from './components/DaysForm';
 
 import './sidebar.scss';
 
@@ -12,7 +12,7 @@ interface props {
 export function Sidebar({ startGame, resetBoard }: props): ReactElement {
   return (
     <section className='sidebar'>
-      <TurnsForm startGame={startGame} />
+      <DaysForm startGame={startGame} />
       <BoardSettings resetBoard={resetBoard} />
     </section>
   );

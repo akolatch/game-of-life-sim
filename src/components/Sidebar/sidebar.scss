@@ -2,37 +2,39 @@
 @import '../../style/mixin.scss';
 
 .sidebar {
-  grid-area: 2 / 1 / 6 / 2;
+  grid-area: 1 / 1 / 6 / 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  justify-self: center;
+  align-self: center;
 }
 
 .days-incomplete {
   margin-right: 2em;
-  @include text-input('Days', 1.5em, $alert-50);
+  @include text-input('Days', $alert-50);
 }
 .days-input-container {
   margin-right: 2em;
-  @include text-input('Days', 1.5em);
+  @include text-input('Days');
 }
 
 .width-incomplete {
   padding-right: 0.75em;
-  @include text-input('Width', 1.5em, $alert-50);
+  @include text-input('Width', $alert-50);
 }
 .width-input-container {
   padding-right: 0.75em;
-  @include text-input('Width', 1.5em);
+  @include text-input('Width');
 }
 .height-incomplete {
   padding-right: 0.75em;
-  @include text-input('Height', 1.5em, $alert-50);
+  @include text-input('Height', $alert-50);
 }
 .height-input-container {
   padding-right: 0.75em;
-  @include text-input('Height', 1.5em, $gray-70, -8%);
+  @include text-input('Height', $gray-70, -8%);
 }
 
 @mixin percent($color: $gray-70) {
@@ -49,12 +51,12 @@
 }
 .percent-incomplete {
   margin-bottom: 2em;
-  @include text-input('Living', 1.5em, $alert-50, -8%);
+  @include text-input('Living', $alert-50, -8%);
   @include percent($alert-50);
 }
 .percent-input-container {
   margin-bottom: 2em;
-  @include text-input('Living', 1.5em, $gray-70, -8%);
+  @include text-input('Living', $gray-70, -8%);
   @include percent;
 }
 .form-row {
@@ -75,10 +77,10 @@
   @include boarder-main($gray-70);
   @include top-label('Size', -5%);
 }
-form {
-  display: flex;
+
+.days-form {
   flex-direction: row;
-  align-items: center;
+  margin-bottom: 4em;
 }
 .reset {
   position: relative;

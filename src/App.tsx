@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { hot } from 'react-hot-loader/root';
 
 import { Board } from './components/Board/Board';
+import { Counter } from './components/Board/components/Counter';
 import { Sidebar } from './components/Sidebar/Sidebar';
 
 import { useBoard } from './hooks/useBoard';
@@ -48,8 +49,11 @@ function App() {
   return (
     <main>
       <h1>Game Of Life</h1>
-      <Sidebar startGame={setDays} resetBoard={resetBoard} />
-      <Board board={board} gameOver={gameOver} daysPassed={daysPassed} />
+      <div className='main-container'>
+        <Counter daysPassed={daysPassed} />
+        <Sidebar startGame={setDays} resetBoard={resetBoard} />
+        <Board board={board} gameOver={gameOver} />
+      </div>
     </main>
   );
 }

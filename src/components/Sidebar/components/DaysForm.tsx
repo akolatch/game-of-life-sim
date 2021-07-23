@@ -6,7 +6,7 @@ interface props {
   startGame: (numTurns: number) => void;
 }
 
-export function TurnsForm({ startGame }: props): ReactElement {
+export function DaysForm({ startGame }: props): ReactElement {
   const [numTurns, setNumTurns] = useNumberStateInput(0, 500);
   const [incomplete, setIncomplete] = useState(false);
 
@@ -21,7 +21,7 @@ export function TurnsForm({ startGame }: props): ReactElement {
     }
   };
   return (
-    <form action='submit'>
+    <form action='submit' className='days-form'>
       <NumberInput
         name='days'
         value={numTurns}

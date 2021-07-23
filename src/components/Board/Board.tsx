@@ -7,13 +7,11 @@ import './board.scss';
 interface props {
   board: Matrix;
   gameOver: string;
-  daysPassed: number;
 }
 
-export function Board({ board, gameOver, daysPassed }: props): ReactElement {
+export function Board({ board, gameOver }: props): ReactElement {
   return (
     <div className='board-container'>
-      <Counter daysPassed={daysPassed} />
       {gameOver.length > 0 ? <h3 className='game-over'>{gameOver}</h3> : null}
       {board.length > 0 ? (
         <div className='board'>
